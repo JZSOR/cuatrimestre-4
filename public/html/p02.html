@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id = "head_contenido"></head>
+<body>
+    <div class="container">
+
+        <main>
+            <div id="nav_contenido">
+
+            </div>
+            <!-- Card -->
+            <div class="card">
+                <img src="/public/img/a.png" class="card-img-top" alt="Practica 02" style="width: 15rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Practica 02</h5>
+                  <p class="card-text">Usar el Objeto Nativo XMLHttpRequest para realizar peticiones de busqueda.</p>
+                  <br><br>
+                  <center>
+                    <h2> Buscar por Id Albums</h2>
+                    <label for="">id del Usuario</label><input type="number" name = "id" id="idjson">
+                    <button id="buscar" type="button" class="btn btn-secondary">Buscar</button>
+                    <button id="limpiar" type="button" class="btn btn-secondary">Limpiar</button>
+                    <br><br>
+                  </center>
+                    <table class="table" id="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">userId</th>
+                            <th scope="col">id</th>
+                            <th scope="col">title</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tbody">
+                          
+                        </tbody>
+                    </table>
+                  <p id="mensaje" class="card-text"></p>
+                </div>
+            </div>
+        </main>
+
+    <footer>
+        <div id="footer_contenido">
+
+        </div>
+    </footer>
+    </div>
+</body>
+    <script src="/public/js/partials.js"></script>
+    <script src="/public/js/p02.js"></script>
+</html>

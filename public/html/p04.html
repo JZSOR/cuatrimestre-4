@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id = "head_contenido"></head>
+
+<body>
+    <div class="container">
+
+        <main>
+            <div id="nav_contenido">
+
+            </div>
+            <!-- Card -->
+            <div class="card">
+                <img src="/public/img/perro.PNG" class="card-img-top" alt="Practica 04" style="width: 15rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Practica 04</h5>
+                  <p class="card-text">Usar el Objeto FETCH para realizar transferencia de Informacion.</p>
+                  <form>
+                    <div class="form-floating">
+                      <select class="form-select" id="razaSelect" aria-label="Floating label select example" id="lista" aria-placeholder="Seleccione la raza que desee visualizar">
+                        <option value="">Seleccione una raza</option>
+                      </select>
+                      <label for="floatingSelect">API dog.ceo</label>
+                    </div>
+                  </form>       
+                  
+                  <button id="btnBuscar" type="button" class="btn btn-secondary">Buscar</button>
+                  <button id="btnLimpiar" type="button" class="btn btn-secondary">Limpiar</button>
+                  <br><br>
+
+                  <center>
+                    <h2> Razas Caninas</h2>
+                    <br>
+
+                    <hr>
+                    <img src="/public/img/perroMuestra.png" alt="img-thumbnail" alt="Foto" id="perroIMG">
+                  </center>
+
+                  <p id="mensaje" class="card-text"></p>
+                </div>
+            </div>
+        </main>
+
+    <footer>
+        <div id="footer_contenido">
+
+        </div>
+    </footer>
+    </div>
+</body>
+    <script src="/public/js/partials.js"></script>
+    <script src="/public/js/p04.js"></script>
+</html>

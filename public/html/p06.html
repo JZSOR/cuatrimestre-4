@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="head_contenido"></head>
+
+<body>
+    <div class="container">
+        <main>
+            <div id="nav_contenido"></div>
+
+            <!-- Card -->
+            <div class="card">
+                <img src="/public/img/axios.png" class="card-img-top" alt="Practica 06" style="width: 15rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Practica 06</h5>
+                    <p class="card-text">Uso de Axios para recibir información.</p>
+
+                    <button id="btnBuscar" type="button" class="btn btn-secondary">Buscar al Azar</button>
+                    <button id="btnLimpiar" type="button" class="btn btn-secondary">Limpiar</button>
+                    <br><br>
+
+                    <center>
+                        <h2>Cócteles</h2>
+                        <br>
+                        <img src="/public/img/tragoMuestra.png" class="img-thumbnail" alt="Cóctel" id="imagen" style="width: 200px;">
+                    </center>
+
+                    <p id="mensaje" class="card-text"></p>
+
+                    <!-- Tabla para mostrar la información del cóctel -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Ingredientes</th>
+                                <th scope="col">Receta</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla">
+                        </tbody>
+                    </table>
+                    <hr>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div id="footer_contenido"></div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/public/js/partials.js"></script>
+    <script src="/public/js/p06.js"></script>
+</body>
+</html>
