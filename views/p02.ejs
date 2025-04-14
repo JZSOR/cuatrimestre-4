@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <title>NodeJs</title>
+</head>
+<body>
+    
+<%- include('partials/header.ejs') %>
+<%- include('partials/nav.ejs') %>
+<div class="container">
+    <center>
+        <h3>Cotización</h3>
+    </center>
+
+    <section class="formulario-container" style="padding: 20px;">
+        <div id="formulario" class="container">
+            <form action="/cotizacion" method="post" onsubmit="return validar()">
+                <div class="form-group">
+                    <label for="valor" class="form-label">Valor del Automovil</label>
+                    <input type="number" id="valor" name="valor" value="<%= valor %>" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pinicial">Porcentaje Pago Inicial:</label>
+                    <input type="number" name="pinicial" id="pinicial" value="<%= pinicial %>" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="plazos">Plazos</label>
+                    <select name="plazos" id="plazos" class="select">
+                        <option value="12" <%= plazos == 12 ? 'selected' : ''%>>12 Meses</option>
+                        <option value="24" <%= plazos == 24 ? '' : ''%>>24 Meses</option>
+                        <option value="36" <%= plazos == 36 ? '' : ''%>>36 Meses</option>
+                        <option value="48" <%= plazos == 48 ? '' : ''%>>48 Meses</option>
+                        <option value="60" <%= plazos == 60 ? '' : ''%>>60 Meses</option>
+                    </select>
+                </div>
+
+                <div class="buttons" style="margin: 20px 0px;">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <a href="/cotizacion" class="btn-secondary">Limpiar</a>
+                </div>
+
+            </form>
+
+            <section class="container">
+                <center>
+                    <hr>
+                    <h2>Resultados</h2>
+                    <hr>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Valor del Automovil</th>
+                                <th>Porcentaje Pago Inicial</th>
+                                <th>Plazos</th>
+                                <th>Cuota Mensual</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% 
+                                if(valor && pinicial && plazos) {
+                                    let pagoInicial = valor * (pinicial / 100);
+                                    let totalFin = valor - pagoInicial;
+                                    let pagoMensual = totalFin / plazos;
+                            %>
+                            <tr>
+                                <td><%= valor %></td>
+                                <td><%= pinicial %></td>
+                                <td><%= plazos %></td>
+                                <td><%= pagoMensual.toFixed(2) %></td>
+                            </tr>
+                        <% } %>
+                        </tbody>
+                    </table>
+                </center>
+            </section>
+
+        </div>
+    </section>
+    <%- include('partials/footer.ejs') %>
+    </div>
+</body> 
+<script>
+    function validar(){
+        var pinicial = document.getElementById('pinicial').value;
+        if (pinicial < 0) { alert('El porcentaje de pago inicial no puede ser menor a 0'); return false; }
+        if (pinicial > 100) { alert('El porcentaje de pago inicial no puede ser mayor al 100'); return false; }
+        return true;
+    }
+</script>
+</html>
